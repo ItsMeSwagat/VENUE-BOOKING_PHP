@@ -106,6 +106,30 @@ adminLogin();
                 } else {
                     alert("New Image Added!");
                     add_venueImage_form.reset();
+                    get_venueDetails();
+                }
+            }
+
+            xhr.send(data);
+        }
+
+        function rem_venueImage(img_id, venue_id) {
+            let data = new FormData();
+            data.append('image_id', img_id);
+            data.append('venue_id', venue_id);
+            data.append('rem_venueImage', '');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax/venues_crud.php", true);
+
+
+            xhr.onload = function() {
+                console.log(this.responseText);
+                if (this.responseText == 1) {
+                    alert("Image Removed!");
+                    get_venueDetails();
+                } else {
+                    alert("!Error! Image removal Error");
                 }
             }
 

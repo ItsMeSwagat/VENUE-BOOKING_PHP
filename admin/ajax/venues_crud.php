@@ -52,7 +52,7 @@ if (isset($_POST["add_venue"])) {
 }
 
 if (isset($_POST["get_all_venues"])) {
-    $res = selectAll('venues');
+    $res = select("SELECT * FROM `venues` WHERE `removed` = ?", [0], 'i');
     $i = 1;
 
     $data = "";
@@ -81,7 +81,7 @@ if (isset($_POST["get_all_venues"])) {
                         <button class='edit-btn'>
                             <a href=\"add_venueImage.php?id=$row[id]&name=$row[name]\">Add Img</a>
                         </button>
-                        <button class='delete-btn' onclick='rem_service($row[id])'>
+                        <button class='delete-btn' onclick='rem_venue($row[id])'>
                             Delete
                         </button>
                     </td>   
@@ -192,20 +192,24 @@ if (isset($_POST["toggle_status"])) {
     }
 }
 
-if (isset($_POST["rem_service"])) {
+if (isset($_POST["rem_venue"])) {
     $frm_data = filteration($_POST);
-    $values = [$frm_data['rem_service']];
 
-    $pre_q = "SELECT * FROM `services` WHERE `id` = ?";
-    $res = select($pre_q, $values, "i");
-    $img = mysqli_fetch_assoc($res);
+    $res1 = select("SELECT * FROM `venue_images` WHERE `venue_id` = ?", [$frm_data['venue_id']], "i");
 
-    if (deleteImage($img["icon"], SERVICES_FOLDER)) {
-        $q = "DELETE FROM `services` WHERE `id`=?";
-        $res = delete($q, $values, "i");
-        echo $res;
+    while ($row = mysqli_fetch_assoc($res1)) {
+        deleteImage($row["image"], VENUES_FOLDER);
+    }
+
+    $res2 = delete("DELETE FROM `venue_images` WHERE `venue_id` = ?", [$frm_data['venue_id']], 'i');
+    $res3 = delete("DELETE FROM `venue_features` WHERE `venue_id` = ?", [$frm_data['venue_id']], 'i');
+    $res4 = delete("DELETE FROM `venue_services` WHERE `venue_id` = ?", [$frm_data['venue_id']], 'i');
+    $res5 = update("UPDATE `venues` SET `removed` = ? WHERE `id` = ?", [1, $frm_data['venue_id']], 'ii');
+
+    if ($res2 || $res3 || $res4 || $res5) {
+        echo 1;
     } else {
-        echo "0";
+        echo 0;
     }
 }
 
@@ -236,13 +240,32 @@ if (isset($_POST["get_venue_images"])) {
     while ($row = mysqli_fetch_assoc($res)) {
         echo <<<data
             <tr>
-                <td><img src="$path$image" /></td>
-                <td>thumb</td>
-                <td>delete</td>
+                <td><img src="$path$row[image]" /></td>
+                <td>
+                    <button class="edit-btn">ACTIVE</button>
+                </td>
+                <td>
+                    <button onCLick='rem_venueImage($row[sr_no], $row[venue_id])' class='delete-btn'>Delete</button>
+                </td>
             </tr>
 
         data;
     }
-
-
 }
+
+if (isset($_POST["rem_venueImage"])) {
+    $frm_data = filteration($_POST);
+    $values = [$frm_data['image_id'], $frm_data['venue_id']];
+
+    $pre_q = "SELECT * FROM `venue_images` WHERE `sr_no` = ? AND `venue_id` = ?";
+    $res = select($pre_q, $values, 'ii');
+    $img = mysqli_fetch_assoc($res);
+
+    if (deleteImage($img["image"], VENUES_FOLDER)) {
+        $q = "DELETE FROM `venue_images` WHERE `sr_no` = ? AND `venue_id` = ?";
+        $res = delete($q, $values, "ii");
+        echo $res;
+    } else {
+        echo "0";
+    }
+};

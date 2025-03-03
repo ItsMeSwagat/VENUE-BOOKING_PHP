@@ -81,24 +81,26 @@ adminLogin();
             xhr.send('toggle_status=' + id + '&value=' + val);
         }
 
+        function rem_venue(venue_id) {
+            if (confirm("Are you sure you want to delete this venue?")) {
+                let data = new FormData();
+                data.append('venue_id', venue_id);
+                data.append('rem_venue', '');
 
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "ajax/venues_crud.php", true);
 
-        function rem_service(val) {
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/venues_crud.php", true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-            xhr.onload = function() {
-                if (this.responseText == 1) {
-                    alert("service Deleted!");
-                    get_venues();
-                } else if (this.responseText == 'venue_added') {
-                    alert("Error,service added in Venue!");
-                } else {
-                    alert("Error, Server Down");
+                xhr.onload = function() {
+                    console.log(this.responseText)
+                    if (this.responseText == 1) {
+                        alert("Venue Removed!");
+                        get_all_venues();
+                    } else {
+                        alert("Error, Room Removal Failed!");
+                    }
                 }
+                xhr.send(data);
             }
-            xhr.send('rem_service=' + val);
         }
     </script>
 
