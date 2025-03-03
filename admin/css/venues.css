@@ -1,0 +1,124 @@
+.edit-btn {
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.delete-btn {
+  background-color: #c0392b;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.delete-btn:hover {
+  background-color: #e74c3c;
+}
+
+.edit-btn:hover {
+  background-color: grey;
+}
+
+.btn {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-block;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.cancel-btn {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-block;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.add-container {
+  margin: 2rem auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid #333;
+  padding: 2rem;
+}
+
+.add-container form {
+  display: grid;
+  gap: 1rem;
+}
+
+.add-container form label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.add-container form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-div {
+  display: flex;
+  gap: 1rem;
+}
+
+.feature-item label {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #ccc;
+  outline: none;
+}
+
+input[type="file"] {
+  padding: 10px;
+}
+
+/* Basic checkbox styling */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #333;
+  }
+  

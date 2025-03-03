@@ -1,0 +1,70 @@
+.service-section {
+  width: 100%;
+  padding: 2rem;
+}
+
+.service-section h5 {
+  text-align: center;
+  font-size: 28px;
+  padding-bottom: 20px;
+}
+
+.service-section .service-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.service-section .service-container .service-card {
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+
+.service-section .service-container .service-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.service-section .service-container .service-card .service-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 10px 20px;
+}
+
+.service-section .service-container .service-card .service-item h4 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.service-section .service-container .service-card .service-item p {
+  font-weight: 600;
+}
+
+.service-section .service-container .service-card .service-item span {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.service-section .service-container .service-card .service-item .service-row {
+  display: flex;
+  gap: 10px;
+}
+
+.service-section .service-container .service-card .service-item .service-row p {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 5px 10px;
+}

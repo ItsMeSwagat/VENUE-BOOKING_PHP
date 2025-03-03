@@ -1,0 +1,168 @@
+.venue {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.venue-section {
+  width: 100%;
+}
+
+.venue-section h5 {
+  text-align: center;
+  font-size: 28px;
+  padding-bottom: 20px;
+}
+
+.venue-section .venue-container {
+  height: 85vh;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.venue-section .venue-container .venue-card {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.venue-section .venue-container .venue-card img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.venue-section .venue-container .venue-card .venue-item {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.venue-section .venue-container .venue-card .venue-item h4 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.venue-section .venue-container .venue-card .venue-item p {
+  font-weight: 600;
+}
+
+.venue-section .venue-container .venue-card .venue-item span {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.venue-section .venue-container .venue-card .venue-item .service-row {
+  display: flex;
+  gap: 10px;
+}
+
+.venue-section .venue-container .venue-card .venue-item .service-row p {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 10px;
+}
+
+.btn {
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.more-btn {
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+/* filter */
+
+.availability-form {
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.availability-form h5 {
+  font-size: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.availability-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.availability-form form .form-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.availability-form form .form-item label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.availability-form form .form-item input {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #ccc;
+  outline: none;
+}
+
+.availability-btn {
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+}
