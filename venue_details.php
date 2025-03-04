@@ -13,27 +13,6 @@
     <?php require('components/navbar.php') ?>
 
     <div class="venue">
-
-        <div class="availability-form">
-            <h5>Check Availability</h5>
-            <form action="">
-                <div class="form-item">
-                    <label for="">Start Date:</label>
-                    <input type="date" required>
-                </div>
-                <div class='form-item'>
-                    <label for="">Start Date:</label>
-                    <input type="date" required>
-                </div>
-
-                <div>
-                    <button class="availability-btn">Check Availability</button>
-                </div>
-
-            </form>
-
-        </div>
-
         <div class="venue-section">
 
             <div class="venue-container">
