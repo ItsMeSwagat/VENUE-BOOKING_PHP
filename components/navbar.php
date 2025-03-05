@@ -1,6 +1,7 @@
-<?php 
-    require_once('admin/inc/db_config.php');
-    require_once('admin/inc/essentials.php');
+<?php
+require_once('admin/inc/db_config.php');
+require_once('admin/inc/essentials.php');
+require_once('admin/inc/uploadImage.php');
 ?>
 
 <div class="navbar-container">

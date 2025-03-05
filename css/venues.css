@@ -41,6 +41,7 @@
   width: 50%;
   height: 100%;
   object-fit: cover;
+  border-right: 1px solid #333;
 }
 
 .venue-section .venue-container .venue-card .venue-item {
@@ -50,7 +51,6 @@
   flex-direction: column;
   gap: 1rem;
 }
-
 
 .venue-section .venue-container .venue-card .venue-item h4 {
   font-size: 25px;
@@ -79,25 +79,27 @@
   padding: 5px 10px;
 }
 
-
 .btn-group {
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    flex-direction: column;
-    gap: 1rem;
-    margin-right: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  flex-direction: column;
+  gap: 1rem;
+  margin-right: 10px;
 }
 
 .btn {
-  padding: 10px 15px;
+  width: 8rem;
+  height: 3rem;
   background-color: #333;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .more-btn-container {

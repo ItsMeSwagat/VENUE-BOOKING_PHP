@@ -60,9 +60,19 @@
                         $services_data .= "<p>$serv_row[name]</p>";
                     }
 
+
+                    $venue_img = VENUES_IMG_PATH . "thumbnail.jpg";
+                    $venue_q = mysqli_query($con, "SELECT * FROM `venue_images` WHERE `venue_id` = '$venue_data[id]'");
+
+                    if (mysqli_num_rows($venue_q) > 0) {
+                        $img_res = mysqli_fetch_assoc($venue_q);
+                        $venue_img = VENUES_IMG_PATH . $img_res['image'];
+                    }
+
+
                     echo <<<data
                         <div class="venue-card">
-                            <img src="images/rooms/IMG_42663.png" alt="">
+                            <img src="$venue_img" alt="">
                             <div class="venue-item">
                                 <h4>$venue_data[name]</h4>
                                 <p>Price: <span>Rs$venue_data[price]</span></p>
